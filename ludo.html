@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+        <style>
+            *{
+                margin:0%;
+                padding:0%;
+                font-family: 'Acme',sans-serif;
+            }
+            body{
+                background-color:#0a3d62;
+            }
+            .container{
+                width:70%;
+                text-align:center;
+                margin:auto;
+                
+            }
+            .c1{
+                text-align:center;
+                display:inline-block;
+                
+            }
+            img{
+                width:75%;
+            }
+            h1{
+                font-size:6rem;;
+                margin:30px;
+                text-shadow:5px 5px 0 white;
+                color:#f6b93b;
+            }
+            p{
+                font-size:2rem;
+                color:#00b894;
+                text-shadow:1px 1px ivory;
+            
+            }
+            button{
+                padding:10px;
+                background-color: #00b894;
+                color:white;
+                border:none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>JS Ludo</h1>
+            <div class="c1">
+                <p>  Player 1 </p>
+                <img  id="i1" src="dice1.png">
+            </div>
+            <div class="c1">
+                <p>  Player 2 </p>
+                <img id="i2" src="dice2.png">
+            </div>
+            <br>
+            <br>
+            <button onclick="ludo()">Click Me</button>
+        </div>
+
+       
+       <script>
+           ludo=()=>{
+               const a=Math.floor( Math.random() * 6) + 1;
+               const player1=`dice${a}.png`;
+               document.getElementById("i1").setAttribute('src',player1);
+
+               const b=Math.floor(Math.random() * 6) +1;
+               const player2=`dice${b}.png`;
+               document.getElementById("i2").setAttribute("src",player2);
+
+               if(a>b){ 
+                   document.querySelector("h1").innerHTML="Player 1 WON"; 
+                }
+                else if(a<b){
+                    document.querySelector("h1").innerHTML="Player 2 WON";
+                }
+                else{
+                    document.querySelector("h1").innerHTML="DRAW";
+                }
+
+           }
+       </script> 
+    </body>
+</html>
